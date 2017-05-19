@@ -53,3 +53,16 @@ mongo admin --eval "db.createUser({user:'you360',pwd:'secret',roles:['root']})"
 mongo $1 --eval "db.test.insert({name:'db creation'})"
 sudo service mongod restart
 
+
+
+#Redis
+
+echo "Installing Redis"
+sudo add-apt-repository ppa:chris-lea/redis-server -y
+sudo apt-get update
+sudo apt-get install redis-server
+
+sudo systemctl start redis
+sudo systemctl status redis
+sudo systemctl enable redis
+
