@@ -60,9 +60,10 @@ sudo service mongod restart
 echo "Installing Redis"
 sudo add-apt-repository ppa:chris-lea/redis-server -y
 sudo apt-get update
-sudo apt-get install redis-server
+sudo apt-get install redis-server -y
 
-sudo systemctl start redis
 sudo systemctl status redis
 sudo systemctl enable redis
+sudo ufw allow 6379
+sudo systemctl start redis
 
